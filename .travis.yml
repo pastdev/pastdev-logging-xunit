@@ -9,7 +9,6 @@ addons:
 sudo: required
 solution: Pastdev.Logging.Xunit.sln
 mono: none
-dotnet: 3.0.0-preview8
 script:
 - sudo snap alias dotnet-sdk.dotnet dotnet
 - dotnet --version

@@ -1,0 +1,19 @@
+# Vi
+*~
+.*.swp
+
+# vscode
+.vscode
+
+# dotnet
+obj
+bin
+
+# Migration data
+exports.tgz
+
+# Environment configuration
+appsettings.override.json
+
+# this project
+src/Ross.Core.BCC/MailManager2010Manual.pdf

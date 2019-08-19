@@ -1,0 +1,6 @@
+language: csharp
+solution: Pastdev.Logging.Xunit.sln
+mono: none
+dotnet: 3.0.0-preview8
+script:
+- dotnet build

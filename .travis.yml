@@ -12,4 +12,5 @@ mono: none
 script:
 - sudo snap alias dotnet-sdk.dotnet dotnet
 - dotnet --version
-- dotnet build
+- dotnet build --configuration Release --no-incremental
+- dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build"

@@ -17,10 +17,10 @@ env:
 script:
 - sudo snap alias dotnet-sdk.dotnet dotnet
 - dotnet --version
-- dotnet build --configuration Release --no-incremental
+- dotnet build --configuration Release --no-incremental /p:PublicRelease=true
 - |
   if [[ "${TRAVIS_BRANCH}" == "master" ]]; then
     rm -rf "$(pwd)/build"
-    dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build"
+    dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build" /p:PublicRelease=true
     find "$(pwd)/build" -type f -not -name "*symbols.nupkg" -exec dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "${NUGET_API_KEY}" {} \;
   fi

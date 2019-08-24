@@ -14,9 +14,13 @@ env:
   global:
   - secure: "sNgnqqIMDDZuvHKBqf6lMcMq5gfLIhP8lM0DD1T+CwLHG38s14u4rkrOLFnK786BmB1DpR0dSMQgYY8XBd0JVMlYKJ/9VMn2c+uvX6dnZw96OinuAsGnEyG06Ltesg1HaE7ZR1XvWVl1Ok917DAGBTo9uQi5AD2VLm3s/vKL+h8G6FecBfYNCwXCpOdfCABl2YnTmA8xVOvvFx8Xfg+j0vjeT4/xo39n+IWCeVrZR5vZ7QYGdS+5WHWz4BbG+hLku/v8Sr5H6uP63GpyycNNWetmNRd81KnogPWXE9lKmDBaThiz/aL5fM87Rg2oD3/F9uA9C7ShDyIGMXbDPLm/UMZD1Q0WE1g6JoaVxr4DcnxfGY7PEdOxMKnLvyaE0SVzk61X2Rrd3puxWCOJo1MO8A30C4HOcf+0NCr9WuaPGmP8XCtr4rBwvQDiB20OD5e/UryQaqGG0hQlnjU3u/JURhDxOYkiIu/1KkcMxvizcmRoaGyfGzpYaq26PT6fFlHTyPB5J43xblmInMXfugud5ptfvjLGXVBGZbv8A8YmUEbxKaN5Fjy9CWNHLUm56OjO9NOAnIAb0tUEO0dx4yF7E1Q5WLp0LKB+Yk4Sz2k71yUJk6zxzKp3EfsJlTWBjBywHCtUYie20XxL023cIxPWHBm9pvOxsnqCeg87az7eNBc="
 
-
 script:
 - sudo snap alias dotnet-sdk.dotnet dotnet
 - dotnet --version
 - dotnet build --configuration Release --no-incremental
-- dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build"
+- |
+  if [[ "${TRAVIS_BRANCH}" == "master" ]]; then
+    rm -rf "$(pwd)/build"
+    dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build"
+    find "$(pwd)/build" -type f -not -name "*symbols.nupkg" -exec dotnet nuget push --api-key "${NUGET_API_KEY}" {} \;
+  fi

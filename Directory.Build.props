@@ -7,6 +7,8 @@
     <NetCoreAppVersion>netcoreapp3.0</NetCoreAppVersion>
     <NetStandardVersion>netstandard2.0</NetStandardVersion>
 
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+
     <FxCopAnalyzersVersion>2.9.4</FxCopAnalyzersVersion>
     <MicrosoftExtensionsVersion>2.2.0</MicrosoftExtensionsVersion>
     <NerdbankGitVersioningVersion>3.0.25</NerdbankGitVersioningVersion>

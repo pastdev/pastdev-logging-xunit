@@ -4,7 +4,7 @@ language: csharp
 addons:
   snaps:
   - name: dotnet-sdk
-    classic: true
+    confinement: classic
     channel: latest/beta
 sudo: required
 solution: Pastdev.Logging.Xunit.sln

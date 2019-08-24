@@ -22,5 +22,5 @@ script:
   if [[ "${TRAVIS_BRANCH}" == "master" ]]; then
     rm -rf "$(pwd)/build"
     dotnet pack --no-build --no-restore --include-symbols --include-source --configuration Release -o "$(pwd)/build"
-    find "$(pwd)/build" -type f -not -name "*symbols.nupkg" -exec dotnet nuget push --api-key "${NUGET_API_KEY}" {} \;
+    find "$(pwd)/build" -type f -not -name "*symbols.nupkg" -exec dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key "${NUGET_API_KEY}" {} \;
   fi

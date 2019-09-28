@@ -37,15 +37,24 @@ namespace Pastdev.Logging.Xunit
             string name,
             string message)
         {
-            this.OutputHelper?.WriteLine(
-                "{0} {1} {2}: {3}",
-                DateTime.Now.ToString("hh:mm:ss.fff", CultureInfo.InvariantCulture),
-                this.Level(logLevel),
-                name,
-                message);
-            if (exception != null)
+            try
             {
-                this.OutputHelper?.WriteLine(exception.ToString());
+                this.OutputHelper?.WriteLine(
+                    "{0} {1} {2}: {3}",
+                    DateTime.Now.ToString("hh:mm:ss.fff", CultureInfo.InvariantCulture),
+                    this.Level(logLevel),
+                    name,
+                    message);
+                if (exception != null)
+                {
+                    this.OutputHelper?.WriteLine(exception.ToString());
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // this can occur if:
+                //   [Test Class Cleanup Failure (Pastdev.Logging.Xunit.Test.XunitLoggerFacts+Log+WriteToLogInDispose)]: System.InvalidOperationException : There is no currently active test.
+                // there is nothing we can do, so just dont write anything...
             }
         }
     }

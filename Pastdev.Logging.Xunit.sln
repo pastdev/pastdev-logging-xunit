@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{62AFDD73-FC3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastdev.Logging.Xunit", "src\Pastdev.Logging.Xunit\Pastdev.Logging.Xunit.csproj", "{D13DAB31-BEFD-4853-812B-23026E1AA252}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{63BCF710-8810-4573-B041-7046634D7882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastdev.Logging.Xunit.Test", "test\Pastdev.Logging.Xunit.Test\Pastdev.Logging.Xunit.Test.csproj", "{5DCC7BF8-9142-4C94-913C-4B20A470D975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,21 @@ Global
 		{D13DAB31-BEFD-4853-812B-23026E1AA252}.Release|x64.Build.0 = Release|Any CPU
 		{D13DAB31-BEFD-4853-812B-23026E1AA252}.Release|x86.ActiveCfg = Release|Any CPU
 		{D13DAB31-BEFD-4853-812B-23026E1AA252}.Release|x86.Build.0 = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|x64.Build.0 = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Debug|x86.Build.0 = Debug|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|x64.ActiveCfg = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|x64.Build.0 = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D13DAB31-BEFD-4853-812B-23026E1AA252} = {62AFDD73-FC3E-4F56-BE4B-1948218696AA}
+		{5DCC7BF8-9142-4C94-913C-4B20A470D975} = {63BCF710-8810-4573-B041-7046634D7882}
 	EndGlobalSection
 EndGlobal
